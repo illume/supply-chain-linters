@@ -1,0 +1,19 @@
+name: 'Supply Chain Linter'
+description: 'Runs the supply-chain-linters'
+author: '@illume'
+
+inputs:
+  args:
+    description: 'Arguments for supply-chain-linters'
+    required: true
+    default: '-h'
+
+runs:
+    using: 'docker'
+    image: 'docker://illume/supply-chain-linters:latest'
+    args:
+      - ${{ inputs.args }}
+
+branding:
+  icon: 'shield'
+  color: 'blue'
